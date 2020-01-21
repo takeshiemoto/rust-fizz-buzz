@@ -1,1 +1,4 @@
-<p>counter works!</p>
+<p>Count: {{ count$ | async }}</p>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<button (click)="reset()">Reset</button>
