@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint --fix",
     "e2e": "ng e2e",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
@@ -20,7 +20,10 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@ngrx/effects": "^8.6.0",
+    "@ngrx/schematics": "^8.6.0",
     "@ngrx/store": "^8.6.0",
+    "@ngrx/store-devtools": "^8.6.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
