@@ -1,0 +1,6 @@
+<div *ngIf="loading$ | async; else listBlock">Loading...</div>
+<ng-template #listBlock>
+  <ul>
+    <li *ngFor="let shop of shopList$ | async">{{ shop?.name }}</li>
+  </ul>
+</ng-template>
