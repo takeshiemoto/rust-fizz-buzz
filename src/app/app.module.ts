@@ -12,13 +12,22 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { TodoComponent } from './todo/todo.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShopListComponent } from './shop-list/shop-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShopListEffects } from './effects/shop-list.effects';
 
 @NgModule({
-  declarations: [AppComponent, CounterComponent, TodoComponent],
+  declarations: [
+    AppComponent,
+    CounterComponent,
+    TodoComponent,
+    ShopListComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -26,7 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([AppEffects]),
+    EffectsModule.forRoot([AppEffects, ShopListEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
