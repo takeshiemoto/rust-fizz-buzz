@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint --fix",
+    "test:w": "ng test --watch",
+    "test:c": "ng test --code-coverage",
     "e2e": "ng e2e",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
