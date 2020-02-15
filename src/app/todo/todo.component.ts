@@ -16,7 +16,7 @@ export class TodoComponent implements OnInit {
   model: FormGroup;
 
   constructor(private store: Store<State>, private fb: FormBuilder) {
-    this.model = fb.group({ task: [''] });
+    this.model = this.fb.group({ task: [''] });
   }
 
   ngOnInit() {}

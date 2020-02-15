@@ -1,23 +1,17 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
+import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-import { counterReducer, CounterState } from './counter.reducer';
+import * as fromCounter from './counter.reducer';
 import * as fromTodo from './todo.reducer';
 import * as fromShopList from './shop-list.reducer';
 
 export interface State {
-  counter: CounterState;
+  [fromCounter.counterFeatureKey]: fromCounter.CounterState;
   [fromTodo.todoFeatureKey]: fromTodo.State;
   [fromShopList.shopListFeatureKey]: fromShopList.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  counter: counterReducer,
+  [fromCounter.counterFeatureKey]: fromCounter.reducer,
   [fromTodo.todoFeatureKey]: fromTodo.reducer,
   [fromShopList.shopListFeatureKey]: fromShopList.reducer
 };

@@ -7,6 +7,8 @@ import {
 } from '@ngrx/store';
 import { increment, decrement, reset } from '../actions/contier.action';
 
+export const counterFeatureKey = 'counter';
+
 export interface CounterState {
   count: number;
 }
@@ -28,10 +30,7 @@ const _counterReducer = createReducer(
   on(reset, state => ({ ...state, count: 0 }))
 );
 
-export function counterReducer(
-  state: CounterState | undefined,
-  action: Action
-) {
+export function reducer(state: CounterState | undefined, action: Action) {
   return _counterReducer(state, action);
 }
 

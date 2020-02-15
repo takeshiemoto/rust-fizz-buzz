@@ -21,7 +21,7 @@ export class ShopListEffects {
           delay(700),
           map(
             shops => loadShopsSuccess({ shops }),
-            catchError(err => loadShopsFailure)
+            catchError(_ => loadShopsFailure)
           )
         )
       )
